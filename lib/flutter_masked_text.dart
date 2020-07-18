@@ -129,7 +129,7 @@ class MaskedTextController extends TextEditingController {
  */
 class MoneyMaskedTextController extends TextEditingController {
   MoneyMaskedTextController(
-      {Decimal initialValue = Decimal.zero,
+      {Decimal initialValue,
         this.decimalSeparator = ',',
         this.thousandSeparator = '.',
         this.rightSymbol = '',
@@ -142,7 +142,7 @@ class MoneyMaskedTextController extends TextEditingController {
       this.afterChange(this.text, this.numberValue);
     });
 
-    this.updateValue(initialValue);
+    this.updateValue(initialValue ?? Decimal.zero);
   }
 
   final String decimalSeparator;
